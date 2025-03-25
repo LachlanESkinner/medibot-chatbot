@@ -1,0 +1,70 @@
+/* General layout */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+/* Headings */
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Buttons */
+.btn {
+    margin-top: 20px;
+}
+
+/* Alerts */
+.alert {
+    margin-top: 20px;
+}
+
+/* Weather list styling */
+.list-group-item {
+    font-size: 1.1rem;
+}
+
+/* Map styling */
+#map {
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Chat container */
+#chat-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Chatbot input field and button */
+#chat-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#chat-form input {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+#chat-form button {
+    padding: 10px 20px;
+}
+
+/* Chat output area */
+#chat-output {
+    margin-top: 15px;
+    white-space: pre-line;
+    background-color: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+}

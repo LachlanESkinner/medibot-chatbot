@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Chat with PyBot{% endblock %}
+
+{% block content %}
+<h2 class="text-center mb-4">Chat with PyBot</h2>
+
+<div class="card">
+    <div class="card-body">
+        <div id="chat-log" style="height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; border-radius: 5px; background-color: #fdfdfd;"></div>
+
+        <div class="input-group mt-3">
+            <input id="user-input" type="text" class="form-control" placeholder="Ask about weather, activities, or say hi...">
+            <div class="input-group-append">
+                <button class="btn btn-success" onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Append messages to the chat log
+    function appendMessage(sender, text) {
+        const chatLog = document.getElementById('chat-log');
+        const message = document.createElement('p');
+        message.innerHTML = `<strong>${sender}:</strong> ${text}`;
+        chatLog.appendChild(message);
+        chatLog.scrollTop = chatLog.scrollHeight;
+    }
+
+    // Handle sending a message
+    function sendMessage() {
+        const input = document.getElementById('user-input');
+        const userMessage = input.value.trim();
+
+        if (!userMessage) return;
+
+        appendMessage("You", userMessage);
+        input.value = "";
+
+        fetch("/chatbot", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: userMessage })
+        })
+        .then(response => response.json())
+        .then(data => appendMessage("Bot", data.response))
+        .catch(error => appendMessage("Bot", "Something went wrong. Please try again."));
+    }
+</script>
+{% endblock %}

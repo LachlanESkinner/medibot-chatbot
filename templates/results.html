@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Weather Results{% endblock %}
+
+{% block content %}
+<h2>Weather in {{ location }}</h2>
+
+{% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+{% elif weather.get('main') %}
+    <ul class="list-group">
+        <li class="list-group-item">Temperature: {{ weather['main']['temp'] }} °C</li>
+        <li class="list-group-item">Weather: {{ weather['weather'][0]['description'] }}</li>
+        <li class="list-group-item">Humidity: {{ weather['main']['humidity'] }}%</li>
+        <li class="list-group-item">Wind Speed: {{ weather['wind']['speed'] }} m/s</li>
+    </ul>
+
+    <!-- Map container -->
+    <h3 class="mt-4">Location Map</h3>
+    <div id="map" style="height: 400px; width: 100%;"></div>
+
+    <!-- Leaflet Map Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize the map
+            var map = L.map('map').setView([{{ lat }}, {{ lon }}], 10);
+
+            // Add OpenStreetMap tiles
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            // Add a marker for the current location
+            L.marker([{{ lat }}, {{ lon }}]).addTo(map)
+                .bindPopup("<b>{{ location }}</b><br>Temperature: {{ weather['main']['temp'] }} °C<br>Weather: {{ weather['weather'][0]['description'] }}")
+                .openPopup();
+        });
+    </script>
+
+{% else %}
+    <div class="alert alert-warning">Weather data unavailable. Check API key.</div>
+{% endif %}
+
+<a href="{{ url_for('get_weather') }}" class="btn btn-primary mt-3">Check Another Location</a>
+{% endblock %}
