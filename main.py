@@ -134,6 +134,19 @@ def get_forecast_from_db(location):
     forecasts = session.query(Forecast).filter_by(location=location).order_by(Forecast.date).limit(5).all()
     return forecasts
 
+def suggest_activity(description):
+    description = description.lower()
+    if "rain" in description or "shower" in description:
+        return "Maybe visit a local museum or enjoy a warm drink at a cafe."
+    elif "clear" in description or "sun" in description:
+        return "Perfect weather for a walk around the local gardens or historic sites."
+    elif "cloud" in description:
+        return "You could still explore the town or check out indoor markets."
+    elif "snow" in description:
+        return "Bundle up and enjoy the winter scenery or go ice skating!"
+    else:
+        return "Make the most of your day with flexible indoor and outdoor plans."
+
 #Flask Routes
 @app.route("/")
 def home():
@@ -169,23 +182,23 @@ def chat():
     user_message = request.json.get("message", "").lower()
     matched_locations = [loc for loc in get_all_locations() if loc.lower() in user_message]
 
+    # 1. Forecast for matched location
     if "forecast" in user_message and matched_locations:
         location = matched_locations[0]
         fetch_and_store_forecast(location)
         forecasts = get_forecast_from_db(location)
         if not forecasts:
             return jsonify({"response": f"No forecast data found for {location}."})
-        response = f"🌦️ 5-Day Forecast for {location.title()}:\n"
+        response = f"5-Day Forecast for {location.title()}:\n"
         for f in forecasts:
-            response += f"{f.date.strftime('%a %b %d')}: {f.temp}°C, {f.description.capitalize()}\n"
-        response += f"\nWould you like suggestions for activities in {location.title()}?"
+            response += f"{f.date.strftime('%a %b %d')}: {f.temp}°C, {f.description}\n"
         return jsonify({"response": response})
 
+    # 2. Weather and activity suggestion
     elif matched_locations:
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
         responses = []
-        follow_ups = []
         for loc in matched_locations:
             lat, lon = get_coordinates(loc)
             weather = loop.run_until_complete(fetch_weather(loc, lat, lon))
@@ -194,26 +207,21 @@ def chat():
             else:
                 temp = weather['main']['temp']
                 desc = weather['weather'][0]['description']
-                summary = f"Currently in {loc.title()}, it’s {temp}°C with {desc}."
-
-                if "clear" in desc or "sun" in desc:
-                    activity = f"It’s a great time for outdoor activities like hiking, cycling, or visiting landmarks in {loc.title()}."
-                elif "rain" in desc or "storm" in desc:
-                    activity = f"Consider indoor attractions like museums or cafes while it's rainy in {loc.title()}."
-                elif "cloud" in desc:
-                    activity = f"A cloudy day in {loc.title()} — perfect for a scenic walk or relaxed exploring."
-                else:
-                    activity = f"Weather might be mixed — keep a raincoat handy and enjoy what {loc.title()} has to offer!"
-
-                responses.append(summary)
-                follow_ups.append(activity)
-
+                suggestion = suggest_activity(desc)
+                responses.append(f"{loc.title()}: {temp}°C, {desc}. {suggestion}")
         loop.close()
-        return jsonify({"response": "\n".join(responses + follow_ups) + "\n\nWould you like a 5-day forecast too?"})
+        return jsonify({"response": "\n".join(responses)})
 
+    # 3. Fallback for weather-related but unrecognized location
+    elif "weather" in user_message:
+        return jsonify({"response": "Please specify a valid location from the itinerary."})
+
+    # 4. General chatbot fallback
     else:
         bot_response = chatbot.get_response(user_message)
         return jsonify({"response": str(bot_response)})
+
+
 
 #Run the app
 if __name__ == "__main__":
