@@ -1,5 +1,5 @@
 
-Lachlans Weather App with Flask and Leaflet.js
+Lachlans Weather App
 
 The aim of this file is to provide clarity around the applications use.  
 

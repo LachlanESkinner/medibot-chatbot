@@ -1,3 +1,4 @@
+#Main.py. ensure the correct environment is loaded - source chatbot_env/bin/activate
 #Import required libraries
 import os
 import requests
