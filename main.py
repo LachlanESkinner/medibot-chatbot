@@ -50,11 +50,11 @@ chatbot = ChatBot(
     ]
 )
 
-# Train the chatbot
+# Train the chatbot (using only your custom data)
 trainer = ListTrainer(chatbot)
 trainer.train(training_data)
 
-# Cache
+# Cache setup
 cache = TTLCache(maxsize=50, ttl=600)
 
 # --- Intent Classification ---
