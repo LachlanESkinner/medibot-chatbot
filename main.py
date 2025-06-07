@@ -1,6 +1,10 @@
 # Main.py — Mediplast AI Chatbot
 # Ensure correct environment: source chatbot_env37/bin/activate
 
+# Insert patched ChatterBot path first
+import sys
+sys.path.insert(0, 'patched_chatterbot')
+
 # Import libraries
 import os
 import asyncio
@@ -14,9 +18,7 @@ from sqlalchemy import create_engine, Column, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
-from chatterbot.trainers import ListTrainer
 from chatbot_training_data import training_data
-
 
 # Async event loop support
 nest_asyncio.apply()
@@ -43,7 +45,7 @@ class ChatLog(Base):
 
 Base.metadata.create_all(bind=engine)
 
-# ChatterBot setup
+# ChatterBot setup (corpus-free)
 chatbot = ChatBot(
     "MediBot",
     read_only=True,
