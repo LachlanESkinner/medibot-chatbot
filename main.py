@@ -14,7 +14,9 @@ from sqlalchemy import create_engine, Column, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
+from chatterbot.trainers import ListTrainer
 from chatbot_training_data import training_data
+
 
 # Async event loop support
 nest_asyncio.apply()
