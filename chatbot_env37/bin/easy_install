@@ -1,0 +1,10 @@
+#!/bin/sh
+'''exec' "/Users/lachlanskinner/Graduate Certificate/Innovation Capstone Project/2. Assignments/2.3 AS 3/2.2.1 Current/2025.04.28 A1c/chatbot_env37/bin/python3" "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import re
+import sys
+from setuptools.command.easy_install import main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())

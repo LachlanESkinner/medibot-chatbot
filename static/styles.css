@@ -1,0 +1,485 @@
+
+/* âœ¨ Updated Mediplast Chatbot Styles with Retained Home Page CSS */
+
+/* Reset + Base */
+body {
+    background-color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Navigation Bar */
+.nav-bar {
+    background-color: #0072CE;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    height: auto;
+    max-height: 44px; /* allow taller logos */
+    padding-top: 8px; /* add breathing space above */
+    padding-bottom: 4px;
+    display: block;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.nav-icons a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-icons a svg {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+    transition: stroke 0.3s;
+}
+
+.nav-icons a:hover svg {
+    stroke: #ffcc00;
+}
+
+.contact-bar {
+    position: fixed;
+    top: 70px; /* space below nav-bar */
+    width: 100%;
+    padding: 12px 0;
+    background: rgba(255, 255, 255, 0.6); /* translucent white */
+    backdrop-filter: blur(6px); /* subtle frosted glass effect */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    z-index: 998; /* below nav, above hero */
+}
+
+.contact-bar-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 15px;
+    color: #000;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.phone-icon {
+    stroke: black;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-bottom: -4px; /* alignment */
+}
+
+
+/* Reusable container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Homepage Hero Section */
+.hero {
+    padding-top: 130px;
+    padding-bottom: 20px; /* ← ADD THIS LINE */
+    background-image: url('/static/hero.png');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+
+.hero h1 {
+    font-size: 2rem;
+    color: #0072CE;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Call to Action Button */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #0072CE;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #005fa3; /* Darker Mediplast blue */
+    color: #ffcc00;            /* Orange/yellow accent */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Product Preview Section */
+.product-preview {
+    padding: 30px 20px 60px;  /* ← REDUCE top padding from 60px to 30px */
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Product Card Layout */
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 24px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* center everything horizontally */
+    justify-content: center;   /* optional: centers vertically too if height is fixed */
+    text-align: center;
+    min-height: 300px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border-color: #0072CE;
+}
+
+.product-card img {
+    max-width: 140px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+
+.product-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.product-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+    margin: 0;
+}
+
+
+/* Medibot Chat Hero Section */
+.hero-panel {
+  text-align: center;
+  padding: 120px 20px 40px;
+}
+
+.hero-logo {
+  width: 160px;         /* Increased from 120px */
+  height: auto;
+  margin-bottom: 24px;  /* Slightly more breathing room below */
+}
+
+
+.hero-panel h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.hero-panel .highlight {
+    color: #0072CE;
+}
+
+.hero-sub {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+/* Card Grid under Medibot Hero */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    padding: 0 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.option-card {
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    text-align: left;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.option-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.option-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.1rem;
+    color: #0072CE;
+}
+
+.option-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Chat Window */
+.chat-wrapper {
+    margin: 60px auto;
+    padding: 0 20px;
+    max-width: 700px;
+}
+
+.chat-window {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+}
+
+.chat-output {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.chat-message {
+    margin: 10px 0;
+    font-size: 0.95rem;
+}
+
+.chat-message.bot {
+    display: flex;
+    align-items: flex-start;
+}
+
+.bot-message-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.bot-icon-inline {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.bot-message-content {
+    background: #f2f7fd;
+    padding: 10px 14px;
+    border-radius: 8px;
+}
+
+.chat-form {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-form input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+}
+
+.chat-send-button {
+    background-color: #0072CE;
+    color: white;
+    border: none;
+    padding: 0 18px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chat-send-button:hover {
+    background-color: #005fa3;
+}
+
+/* Chat icon bottom right /*
+
+#chat-icon {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: #0072CE;
+    border-radius: 50%;
+    padding: 14px;
+    z-index: 1000;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#chat-icon:hover {
+    background-color: #005fa3;
+    transform: scale(1.05);
+}
+
+#chat-icon svg {
+    display: block;
+    stroke: white;
+}
+
+/* Chat Widget Styles */
+#chat-widget {
+    position: fixed;
+    bottom: 80px;
+    right: 24px;
+    width: 320px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    display: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+#chat-widget form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#chat-widget input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#chat-widget button {
+    background-color: #0072CE;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.chat-output-widget {
+    max-height: 200px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+#chat-icon {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background-color: #0072CE; /* Mediplast blue */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+#chat-icon:hover {
+    background-color: #005fa3;
+    transform: scale(1.08);
+}
+
+#chat-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: white;
+    fill: none;
+}
+
+#chat-prompt {
+    position: fixed;
+    bottom: 92px;
+    right: 94px;
+    background-color: #0072CE;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    opacity: 0.95;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+#chat-icon:hover + #chat-prompt {
+    opacity: 0;
+}

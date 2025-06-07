@@ -1,228 +1,115 @@
-#Main.py. ensure the correct environment is loaded - source chatbot_env/bin/activate
-#Import required libraries
+# Main.py — Mediplast AI Chatbot
+# Ensure correct environment: source chatbot_env37/bin/activate
+
+# Import libraries
 import os
-import requests
 import asyncio
-import aiohttp
-import json
 import logging
 import nest_asyncio
 from flask import Flask, request, render_template, jsonify
 from cachetools import TTLCache
 from chatterbot import ChatBot
-from chatterbot.trainers import ChatterBotCorpusTrainer
-from locations import get_coordinates, get_all_locations
-import time
-import pandas as pd
-from sqlalchemy import create_engine, Column, Integer, String, Float, DateTime
+from chatterbot.trainers import ListTrainer
+from sqlalchemy import create_engine, Column, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
+from chatbot_training_data import training_data
 
-#SQLAlchemy setup
+# Async event loop support
+nest_asyncio.apply()
+
+# Logging setup
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# Flask app
+app = Flask(__name__)
+
+# SQLAlchemy setup
 Base = declarative_base()
-engine = create_engine("sqlite:///forecast.db")
+engine = create_engine("sqlite:///chat_logs.db")
 SessionLocal = sessionmaker(bind=engine)
 session = SessionLocal()
 
-class Forecast(Base):
-    __tablename__ = "forecasts"
+class ChatLog(Base):
+    __tablename__ = "chat_logs"
     id = Column(Integer, primary_key=True)
-    location = Column(String)
-    date = Column(DateTime)
-    temp = Column(Float)
-    description = Column(String)
+    user_message = Column(String)
+    bot_response = Column(String)
+    intent = Column(String)
+    timestamp = Column(DateTime, default=datetime.utcnow)
 
 Base.metadata.create_all(bind=engine)
 
-#Async event loop support
-nest_asyncio.apply()
-
-#Loging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
-#flask app
-app = Flask(__name__)
-
-#ChatterBot setup
+# ChatterBot setup
 chatbot = ChatBot(
-    "PyBot",
+    "MediBot",
     read_only=True,
     logic_adapters=[
-        "chatterbot.logic.MathematicalEvaluation",
         "chatterbot.logic.BestMatch"
     ]
 )
-trainer = ChatterBotCorpusTrainer(chatbot)
-trainer.train("chatterbot.corpus.english")
 
-#Read API key
-def get_api_key():
-    try:
-        with open("api_key.txt", "r") as file:
-            return file.read().strip()
-    except FileNotFoundError:
-        raise Exception("API key file not found.")
+# Train the chatbot
+trainer = ListTrainer(chatbot)
+trainer.train(training_data)
 
-API_KEY = get_api_key()
-BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
-FORECAST_URL = "https://api.openweathermap.org/data/2.5/forecast"
-
-#Caching & performance
+# Cache
 cache = TTLCache(maxsize=50, ttl=600)
-performance_metrics = {
-    'total_requests': 0,
-    'cached_responses': 0,
-    'api_latency': []
-}
 
-#Fetch current weather
-async def fetch_weather(location, lat, lon):
-    if location in cache:
-        performance_metrics['cached_responses'] += 1
-        return cache[location]
-
-    params = {
-        "lat": lat,
-        "lon": lon,
-        "appid": API_KEY,
-        "units": "metric"
-    }
-
-    async with aiohttp.ClientSession() as session:
-        start_time = time.time()
-        async with session.get(BASE_URL, params=params) as response:
-            performance_metrics['total_requests'] += 1
-            if response.status == 200:
-                data = await response.json()
-                cache[location] = data
-                performance_metrics['api_latency'].append(time.time() - start_time)
-                return data
-            elif response.status == 401:
-                return {"error": "Unauthorized access. Please verify your API key."}
-            else:
-                return {"error": f"API request failed for {location}"}
-
-#Fetch 5-day forecast and store in DB
-def fetch_and_store_forecast(location):
-    lat, lon = get_coordinates(location)
-    params = {
-        "lat": lat,
-        "lon": lon,
-        "appid": API_KEY,
-        "units": "metric"
-    }
-    response = requests.get(FORECAST_URL, params=params)
-    if response.status_code == 200:
-        forecast_list = response.json().get("list", [])
-        session.query(Forecast).filter_by(location=location).delete()
-        for item in forecast_list:
-            entry = Forecast(
-                location=location,
-                date=datetime.strptime(item["dt_txt"], "%Y-%m-%d %H:%M:%S"),
-                temp=item["main"]["temp"],
-                description=item["weather"][0]["description"]
-            )
-            session.add(entry)
-        session.commit()
-        return True
+# --- Intent Classification ---
+def infer_intent(message):
+    msg = message.lower()
+    if "ndis" in msg:
+        return "Funding - NDIS"
+    elif "caps" in msg:
+        return "Funding - CAPS"
+    elif "dva" in msg:
+        return "Funding - DVA"
+    elif "navina" in msg:
+        return "Product - Navina"
+    elif "lofric" in msg:
+        return "Product - LoFric"
+    elif "sample" in msg:
+        return "General - Sample"
+    elif "order" in msg or "shipping" in msg:
+        return "Support - Order"
     else:
-        return False
+        return "General"
 
-#retrieve 5-day forecast from DB
-def get_forecast_from_db(location):
-    forecasts = session.query(Forecast).filter_by(location=location).order_by(Forecast.date).limit(5).all()
-    return forecasts
+# Routes
 
-def suggest_activity(description):
-    description = description.lower()
-    if "rain" in description or "shower" in description:
-        return "Maybe visit a local museum or enjoy a warm drink at a cafe."
-    elif "clear" in description or "sun" in description:
-        return "Perfect weather for a walk around the local gardens or historic sites."
-    elif "cloud" in description:
-        return "You could still explore the town or check out indoor markets."
-    elif "snow" in description:
-        return "Bundle up and enjoy the winter scenery or go ice skating!"
-    else:
-        return "Make the most of your day with flexible indoor and outdoor plans."
-
-#Flask Routes
 @app.route("/")
 def home():
-    return render_template("index.html", locations=get_all_locations())
+    return render_template("index.html")
 
-@app.route("/weather", methods=["GET", "POST"])
-def get_weather():
+@app.route("/chat", methods=["GET", "POST"])
+def chat():
     if request.method == "POST":
-        location = request.form.get("location")
-        coordinates = get_coordinates(location)
-        if not coordinates:
-            return render_template("results.html", error="Invalid location selected.")
-        lat, lon = coordinates
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        weather_data = loop.run_until_complete(fetch_weather(location, lat, lon))
-        loop.close()
-        return render_template("results.html", weather=weather_data, location=location, lat=lat, lon=lon)
-    return render_template("form.html", locations=get_all_locations())
+        user_message = request.form.get("message", "").lower()
+        bot_response = chatbot.get_response(user_message)
+        intent = infer_intent(user_message)
 
-@app.route("/metrics")
-def metrics():
-    avg_latency = sum(performance_metrics['api_latency']) / len(performance_metrics['api_latency']) if \
-    performance_metrics['api_latency'] else 0
-    return render_template("metrics.html", metrics=performance_metrics, avg_latency=avg_latency)
+        chat_log = ChatLog(user_message=user_message, bot_response=str(bot_response), intent=intent)
+        session.add(chat_log)
+        session.commit()
 
-@app.route("/chat")
-def chat_page():
+        return render_template("chat.html", user_message=user_message, bot_response=str(bot_response))
+
     return render_template("chat.html")
 
 @app.route("/chatbot", methods=["POST"])
-def chat():
+def api_chat():
     user_message = request.json.get("message", "").lower()
-    matched_locations = [loc for loc in get_all_locations() if loc.lower() in user_message]
+    bot_response = chatbot.get_response(user_message)
+    intent = infer_intent(user_message)
 
-    # 1. Forecast for matched location
-    if "forecast" in user_message and matched_locations:
-        location = matched_locations[0]
-        fetch_and_store_forecast(location)
-        forecasts = get_forecast_from_db(location)
-        if not forecasts:
-            return jsonify({"response": f"No forecast data found for {location}."})
-        response = f"5-Day Forecast for {location.title()}:\n"
-        for f in forecasts:
-            response += f"{f.date.strftime('%a %b %d')}: {f.temp}°C, {f.description}\n"
-        return jsonify({"response": response})
+    chat_log = ChatLog(user_message=user_message, bot_response=str(bot_response), intent=intent)
+    session.add(chat_log)
+    session.commit()
 
-    # 2. Weather and activity suggestion
-    elif matched_locations:
-        loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(loop)
-        responses = []
-        for loc in matched_locations:
-            lat, lon = get_coordinates(loc)
-            weather = loop.run_until_complete(fetch_weather(loc, lat, lon))
-            if "error" in weather:
-                responses.append(f"{loc.title()}: {weather['error']}")
-            else:
-                temp = weather['main']['temp']
-                desc = weather['weather'][0]['description']
-                suggestion = suggest_activity(desc)
-                responses.append(f"{loc.title()}: {temp}°C, {desc}. {suggestion}")
-        loop.close()
-        return jsonify({"response": "\n".join(responses)})
+    return jsonify({"response": str(bot_response), "intent": intent})
 
-    # 3. Fallback for weather-related but unrecognized location
-    elif "weather" in user_message:
-        return jsonify({"response": "Please specify a valid location from the itinerary."})
-
-    # 4. General chatbot fallback
-    else:
-        bot_response = chatbot.get_response(user_message)
-        return jsonify({"response": str(bot_response)})
-
-
-
-#Run the app
+# Run the app
 if __name__ == "__main__":
     app.run(debug=True)

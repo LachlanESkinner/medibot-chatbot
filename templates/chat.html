@@ -1,50 +1,134 @@
-{% extends "base.html" %}
-{% block title %}Chat with PyBot{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MediBot – Mediplast Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
 
-{% block content %}
-<h2 class="text-center mb-4">Chat with PyBot</h2>
-
-<div class="card">
-    <div class="card-body">
-        <div id="chat-log" style="height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; border-radius: 5px; background-color: #fdfdfd;"></div>
-
-        <div class="input-group mt-3">
-            <input id="user-input" type="text" class="form-control" placeholder="Ask about weather, activities, or say hi...">
-            <div class="input-group-append">
-                <button class="btn btn-success" onclick="sendMessage()">Send</button>
-            </div>
+<!-- Top Navigation Bar -->
+<div class="nav-bar">
+    <div class="container nav-container">
+        <a href="/">
+            <img src="{{ url_for('static', filename='mediplast_logo.png') }}" alt="Mediplast Logo" class="logo">
+        </a>
+        <nav class="nav">
+            <a href="#">LoFric</a>
+            <a href="#">Navina</a>
+            <a href="#">Pari</a>
+            <a href="#">MucoClear</a>
+            <a href="#">VitABDECK</a>
+            <a href="#">Learn</a>
+            <a href="#">Contact Us</a>
+        </nav>
+        <div class="nav-icons">
+            <a href="#" title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+            </a>
+            <a href="#" title="Login">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M6 20c0-4 4-6 6-6s6 2 6 6" />
+                </svg>
+            </a>
+            <a href="#" title="Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2h12l1 5H5l1-5zM3 7h18l-1.5 13h-15L3 7z" />
+                </svg>
+            </a>
         </div>
     </div>
 </div>
 
+<!-- Hero Section -->
+<section class="hero-panel">
+    <div class="hero-content">
+        <img src="{{ url_for('static', filename='medibot-icon.png') }}" alt="MediBot Logo" class="hero-logo">
+        <h1>How can <span class="highlight">MediBot</span> assist you today?</h1>
+        <p class="hero-sub">Choose a support path below or ask your question directly.</p>
+    </div>
+
+    <!-- Support Option Cards -->
+    <div class="card-grid">
+        <div class="option-card" onclick="fillInput('Can I claim LoFric Origo with NDIS?')">
+            <h3>NDIS + LoFric</h3>
+            <p>Help navigating NDIS funding and eligible catheter options.</p>
+        </div>
+        <div class="option-card" onclick="fillInput('Is Navina covered by CAPS?')">
+            <h3>CAPS + Navina</h3>
+            <p>Understand CAPS vs DVA and claimable bowel care devices.</p>
+        </div>
+        <div class="option-card" onclick="fillInput('What is Navina Mini?')">
+            <h3>Navina Products</h3>
+            <p>Explore Navina Mini, Classic, and Smart for home bowel irrigation.</p>
+        </div>
+        <div class="option-card" onclick="fillInput('I need help with my order or sample')">
+            <h3>General Support</h3>
+            <p>Need help with something else? Ask away and we’ll guide you.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Chat Interface -->
+<div class="container chat-wrapper">
+    <div class="chat-window">
+        <div id="chat-output" class="chat-output">
+            <div class="chat-message bot">
+                <div class="bot-message-wrapper">
+                    <img src="{{ url_for('static', filename='medibot-icon.png') }}" class="bot-icon-inline" alt="Bot">
+                    <div class="bot-message-content">
+                        <strong>MediBot:</strong> Hello! How can I assist you today?
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form id="chat-form" class="chat-form">
+            <input type="text" name="message" id="chat-input" placeholder="Type your question..." required>
+            <button type="submit" class="chat-send-button">➤</button>
+        </form>
+    </div>
+</div>
+
 <script>
-    // Append messages to the chat log
-    function appendMessage(sender, text) {
-        const chatLog = document.getElementById('chat-log');
-        const message = document.createElement('p');
-        message.innerHTML = `<strong>${sender}:</strong> ${text}`;
-        chatLog.appendChild(message);
-        chatLog.scrollTop = chatLog.scrollHeight;
+    function fillInput(text) {
+        document.getElementById("chat-input").value = text;
+        document.getElementById("chat-input").focus();
     }
 
-    // Handle sending a message
-    function sendMessage() {
-        const input = document.getElementById('user-input');
-        const userMessage = input.value.trim();
+    document.getElementById("chat-form").addEventListener("submit", async function(e) {
+        e.preventDefault();
 
-        if (!userMessage) return;
+        const input = document.getElementById("chat-input");
+        const message = input.value.trim();
+        if (!message) return;
 
-        appendMessage("You", userMessage);
+        const output = document.getElementById("chat-output");
+        output.innerHTML += `<div class="chat-message user"><strong>You:</strong> ${message}</div>`;
         input.value = "";
 
-        fetch("/chatbot", {
+        const res = await fetch("/chatbot", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ message: userMessage })
-        })
-        .then(response => response.json())
-        .then(data => appendMessage("Bot", data.response))
-        .catch(error => appendMessage("Bot", "Something went wrong. Please try again."));
-    }
+            body: JSON.stringify({ message })
+        });
+
+        const data = await res.json();
+        output.innerHTML += `<div class="chat-message bot">
+            <div class="bot-message-wrapper">
+                <img src="/static/medibot-icon.png" class="bot-icon-inline" alt="Bot">
+                <div class="bot-message-content">
+                    <strong>MediBot:</strong> ${data.response}
+                </div>
+            </div>
+        </div>`;
+        output.scrollTop = output.scrollHeight;
+    });
 </script>
-{% endblock %}
+
+</body>
+</html>

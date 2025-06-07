@@ -1,7 +1,168 @@
-{% extends "base.html" %}
-{% block title %}Home - Weather App{% endblock %}
-{% block content %}
-<h1 class="text-center">Welcome to the Weather App</h1>
-<p class="text-center">Select a location to get started:</p>
-<a href="{{ url_for('get_weather') }}" class="btn btn-primary d-block mx-auto">Check Weather</a>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mediplast Webshop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://shop.mediplast.com/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="nav-bar">
+    <div class="container nav-container">
+        <a href="/">
+            <img src="{{ url_for('static', filename='mediplast_logo.png') }}" alt="Mediplast Logo" class="logo">
+        </a>
+        <nav class="nav">
+            <a href="#">LoFric</a>
+            <a href="#">Navina</a>
+            <a href="#">Pari</a>
+            <a href="#">MucoClear</a>
+            <a href="#">VitABDECK</a>
+            <a href="#">Learn</a>
+            <a href="#">Contact Us</a>
+        </nav>
+
+        <div class="nav-icons">
+            <!-- Search Icon -->
+            <a href="#" title="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+            </a>
+            <!-- User Icon -->
+            <a href="#" title="Login">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M6 20c0-4 4-6 6-6s6 2 6 6" />
+                </svg>
+            </a>
+            <!-- Bag Icon -->
+            <a href="#" title="Cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2h12l1 5H5l1-5zM3 7h18l-1.5 13h-15L3 7z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Navigation Bar -->
+<div class="nav-bar">
+  <!-- ... -->
+</div>
+
+<!-- Contact Support Banner -->
+<div class="contact-bar">
+    <div class="container contact-bar-content">
+        <svg xmlns="http://www.w3.org/2000/svg" class="phone-icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92V21a2 2 0 0 1-2.18 2C9.88 21.9 2.1 14.12 1.02 4.18A2 2 0 0 1 3 1h4.09a2 2 0 0 1 2 1.72c.13 1.04.38 2.05.73 3.03a2 2 0 0 1-.45 2.11L7.16 8.35a16 16 0 0 0 8.49 8.49l1.49-1.21a2 2 0 0 1 2.11-.45c.98.35 1.99.6 3.03.73a2 2 0 0 1 1.72 2z"/>
+        </svg>
+        <span>Contact us for support: 1300 364 460</span>
+    </div>
+</div>
+
+
+<section class="hero">
+    <div class="container">
+        <h1>Welcome to Mediplast Australia.</h1>
+        <p>
+            For over 60 years, Mediplast has accumulated knowledge and trust to improve healthcare
+            with high-quality and cost-effective essential care solutions. As a global company, we strive
+            to spearhead industry innovation and positive impact with our collective experience and passion.
+            Our brands are iconic in their field and create a real difference to many people across the world.
+        </p>
+        <a href="/chat" class="cta-button">Open MediBot</a>
+    </div>
+</section>
+
+<!-- Top Products Section -->
+<section class="product-preview">
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 30px;">Top Products</h2>
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='lofric-origo.jpg') }}" alt="LoFric Origo" class="product-img">
+                <h3>LoFric Origo</h3>
+                <p>Discreet, foldable catheter for travel. Covered under NDIS.</p>
+            </div>
+
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='lofric-sense.jpg') }}" alt="LoFric Sense" class="product-img">
+                <h3>LoFric Sense</h3>
+                <p>Compact and stylish catheter, designed specifically for women.</p>
+            </div>
+
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='lofric-classic.jpg') }}" alt="LoFric Classic" class="product-img">
+                <h3>LoFric Classic</h3>
+                <p>Reliable and time-tested catheter for everyday use.</p>
+            </div>
+
+            <div class="product-card">
+                <img src="{{ url_for('static', filename='lofric-insticath.jpg') }}" alt="LoFric Insti-Cath" class="product-img">
+                <h3>LoFric Insti-Cath</h3>
+                <p>Designed for one-time use with instant hydration. NDIS eligible.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Floating Chatbot Icon -->
+<div id="chat-icon" onclick="toggleChatWidget()" title="Chat with us">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="white">
+        <path d="M2 3h20v14H6l-4 4V3z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+</div>
+
+<!-- Chat Prompt -->
+<div id="chat-prompt">Need help?</div>
+
+
+<!-- Inline Chat Window -->
+<div id="chat-widget">
+    <div id="chat-output" class="chat-output-widget">
+        <p><strong>MediBot:</strong> Hello! How can I help you today?</p>
+    </div>
+    <form id="chat-form-widget">
+        <input type="text" id="chat-input-widget" placeholder="Ask something..." required>
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+<script>
+    const chatWidget = document.getElementById('chat-widget');
+    const chatOutput = document.getElementById('chat-output');
+
+    function toggleChatWidget() {
+        chatWidget.style.display = chatWidget.style.display === 'block' ? 'none' : 'block';
+    }
+
+    document.getElementById('chat-form-widget').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const input = document.getElementById('chat-input-widget');
+        const message = input.value.trim();
+        if (!message) return;
+
+        chatOutput.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
+        input.value = '';
+
+        const response = await fetch('/chatbot', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message })
+        });
+
+        const data = await response.json();
+        chatOutput.innerHTML += `<p><strong>MediBot:</strong> ${data.response}</p>`;
+        chatOutput.scrollTop = chatOutput.scrollHeight;
+    });
+</script>
+
+</body>
+</html>
