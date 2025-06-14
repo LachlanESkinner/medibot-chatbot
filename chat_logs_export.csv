@@ -1,0 +1,155 @@
+id,user_message,bot_response,intent,timestamp
+1,can i claim lofric origo with ndis?,"Yes, LoFric Origo is eligible under NDIS funding. Select 'NDIS Customer' during checkout.",Funding - NDIS,2025-05-17 01:34:02.455620
+2,is navina covered by caps?,CAPS typically does not cover Navina. You may need to use NDIS or private pay options.,Funding - CAPS,2025-05-17 01:34:07.712282
+3,what is navina mini?,Navina Mini is a bowel management product designed for self-use. It is easy to operate and suitable for most users with neurogenic bowel issues.,Product - Navina,2025-05-17 01:34:14.818177
+4,which catheter should i choose for travel?,"LoFric Origo is an excellent choice for travel due to its foldable, discreet design.",General,2025-05-17 01:34:28.219262
+5,where is my order?,"After checkout, you should receive a tracking email. If not received within 24 hours, please contact our Customer Care Team.",Support - Order,2025-05-17 01:34:58.519677
+6,can i claim lofric origo with ndis?,"Yes, LoFric Origo is eligible under NDIS funding. Select 'NDIS Customer' during checkout.",Funding - NDIS,2025-05-17 01:46:27.465483
+7,what is navina mini?,Navina Mini is a bowel management product designed for self-use. It is easy to operate and suitable for most users with neurogenic bowel issues.,Product - Navina,2025-05-17 02:31:00.041570
+8,what is navina mini?,Navina Mini is a bowel management product designed for self-use. It is easy to operate and suitable for most users with neurogenic bowel issues.,Product - Navina,2025-05-17 02:31:30.464549
+9,can i claim lofric origo with ndis?,"Yes, LoFric Origo is eligible under NDIS funding. Select 'NDIS Customer' during checkout.",Funding - NDIS,2025-05-17 02:33:20.050516
+10,is navina covered by caps?,CAPS typically does not cover Navina. You may need to use NDIS or private pay options.,Funding - CAPS,2025-05-17 02:33:24.991029
+11,what is navina mini?,Navina Mini is a bowel management product designed for self-use. It is easy to operate and suitable for most users with neurogenic bowel issues.,Product - Navina,2025-05-17 02:33:27.731689
+12,can i claim lofric origo with ndis?,"Yes, LoFric Origo is eligible under NDIS funding. Select 'NDIS Customer' during checkout.",Funding - NDIS,2025-05-17 02:55:04.746579
+13,is navina covered by caps?,CAPS typically does not cover Navina. You may need to use NDIS or private pay options.,Funding - CAPS,2025-05-17 02:55:07.251670
+14,what is navina mini?,Navina Mini is a bowel management product designed for self-use. It is easy to operate and suitable for most users with neurogenic bowel issues.,Product - Navina,2025-05-17 02:55:09.496099
+15,can i claim lofric origo with ndis?,"Yes, LoFric Origo is eligible under NDIS funding. Select 'NDIS Customer' during checkout.",Funding - NDIS,2025-05-17 03:33:10.234622
+16,what is navina mini?,Navina Mini is a bowel management product designed for self-use. It is easy to operate and suitable for most users with neurogenic bowel issues.,Product - Navina,2025-05-17 03:33:16.777765
+17,what is sku 42512003,"SKU 4441400 refers to LoFric Origo 40cm CH14 Tiemann. It is an instantly activated, male intermittent catheter ideal for discreet use and travel.",General,2025-05-17 04:15:14.665590
+18,which catheter is suitable for paediatric use?,LoFric Classic and LoFric Hydro-Kit both have paediatric variants like SKU 4010600 and 42110003 respectively.,General,2025-05-17 04:17:13.891534
+19,which catheter is popular among female users?,"LoFric Sense is one of our most popular products for female users, available in sizes like CH08, CH10, CH12, and CH14.",General,2025-05-17 04:17:23.400812
+20,what product is best for male users needing a tiemann tip?,"The LoFric Origo Tiemann range (e.g., SKU 4441400, 4441600) is ideal for male users needing a curved Tiemann tip catheter.",General,2025-05-17 04:18:01.390606
+21,what is navina mini?,Navina Mini is a bowel management product designed for self-use. It is easy to operate and suitable for most users with neurogenic bowel issues.,Product - Navina,2025-05-17 22:38:06.994055
+22,how are you,"After checkout, you should receive a tracking email. If not received within 24 hours, please contact our Customer Care Team.",General,2025-05-17 22:38:14.484939
+23,can i claim lofric origo with ndis?,"Yes, LoFric Origo is eligible under NDIS funding. Select 'NDIS Customer' during checkout.",Funding - NDIS,2025-06-07 03:00:46.023028
+24,can i claim lofric origo with ndis?,"Yes, LoFric Origo is eligible under NDIS funding. Select 'NDIS Customer' during checkout.",Funding - NDIS,2025-06-07 05:00:55.832693
+25,what is navina mini?,Navina Mini is a bowel management product designed for self-use. It is easy to operate and suitable for most users with neurogenic bowel issues.,Product - Navina,2025-06-07 05:01:02.602210
+26,hi,How are you doing?,General,2025-06-07 05:36:09.603599
+27,tell me about lofric insti-cath 20cm ch10 paediatric,"LoFric Insti-Cath 20cm CH08 Paediatric is part of the LoFric Insti-Cath range. Self-lubricating catheter, with leur lock connector",Product - LoFric,2025-06-07 05:50:08.553972
+28,tell me about lofric insti-cath 20cm ch12,"LoFric Insti-Cath 40cm CH08 is part of the LoFric Insti-Cath range. Self-lubricating catheter, with leur lock connector",Product - LoFric,2025-06-07 05:50:29.855102
+29,do you sell catheters for women?,"Yes, we offer a full range of catheters designed for women, including LoFric Sense, which is compact and easy to use.",General,2025-06-07 05:50:52.919302
+30,can i claim lofric origo with ndis?,"Yes, LoFric Origo is eligible under NDIS funding. Select 'NDIS Customer' during checkout.",Funding - NDIS,2025-06-07 05:51:08.219186
+31,is navina covered by caps?,CAPS typically does not cover Navina. You may need to use NDIS or private pay options.,Funding - CAPS,2025-06-07 05:51:16.494930
+32,hi,How are you doing?,General,2025-06-07 05:58:59.734460
+33,what is navina mini?,Navina Mini is a bowel management product designed for self-use. It is easy to operate and suitable for most users with neurogenic bowel issues.,Product - Navina,2025-06-07 06:10:12.162270
+34,what is navina mini?,Navina Mini is a bowel management product designed for self-use. It is easy to operate and suitable for most users with neurogenic bowel issues.,Product - Navina,2025-06-07 06:11:58.579968
+35,what is navina mini?,Navina Mini is a bowel management product designed for self-use. It is easy to operate and suitable for most users with neurogenic bowel issues.,Product - Navina,2025-06-07 06:21:40.074714
+36,can i claim lofric origo with ndis?,"Yes, LoFric Origo is eligible under NDIS funding. Select 'NDIS Customer' during checkout.",Funding - NDIS,2025-06-07 06:26:59.665093
+37,can i claim lofric origo with ndis?,"Yes, LoFric Origo is eligible under NDIS funding. Select 'NDIS Customer' during checkout.",Funding - NDIS,2025-06-07 06:27:14.873795
+38,can i claim lofric origo with ndis?,"Yes, LoFric Origo is eligible under NDIS funding. Select 'NDIS Customer' during checkout.",Funding - NDIS,2025-06-07 06:33:02.875666
+39,is navina covered by caps?,CAPS typically does not cover Navina. You may need to use NDIS or private pay options.,Funding - CAPS,2025-06-07 06:34:08.153113
+40,i need help with my order or sample,I don’t know what catheter I need. Can you help?,General - Sample,2025-06-07 06:34:54.349291
+41,can i claim lofric origo with ndis?,"Yes, LoFric Origo is eligible under NDIS funding. Select 'NDIS Customer' during checkout.",Funding - NDIS,2025-06-07 06:35:06.465005
+42,can i claim lofric origo with ndis?,"Yes, LoFric Origo is eligible under NDIS funding. Select 'NDIS Customer' during checkout.",Funding - NDIS,2025-06-07 06:39:44.751372
+43,i need help with my order or sample,I don’t know what catheter I need. Can you help?,General - Sample,2025-06-07 06:39:47.837968
+44,i need help with my order or sample,I don’t know what catheter I need. Can you help?,General - Sample,2025-06-07 06:40:13.813585
+45,what is navina mini?,Navina Mini is a bowel management product designed for self-use. It is easy to operate and suitable for most users with neurogenic bowel issues.,Product - Navina,2025-06-07 06:41:14.297267
+46,do you offer samples?,We offer samples for many of our continence care products. Please contact our team to request a sample kit.,General - Sample,2025-06-07 06:41:33.420217
+47,i need help with my order or sample,I don’t know what catheter I need. Can you help?,General - Sample,2025-06-07 06:44:25.171843
+48,i need help with my order or sample,I don’t know what catheter I need. Can you help?,General - Sample,2025-06-07 06:53:17.217804
+49,i need help with my order or sample,I don’t know what catheter I need. Can you help?,General - Sample,2025-06-07 06:53:46.138749
+50,i need help with my order or sample,I don’t know what catheter I need. Can you help?,General - Sample,2025-06-07 06:54:21.364908
+51,can i get a quote for ndis funding?,"Yes, please contact our Customer Service Team via the Contact Us page, and we will generate a quote for your plan manager.",Funding - NDIS,2025-06-07 06:54:31.413591
+52,i need help with my order or sample,I don’t know what catheter I need. Can you help?,General - Sample,2025-06-07 06:55:07.954430
+53,how do i change my shipping address?,"If your order hasn’t been dispatched yet, please contact Customer Service immediately to update your shipping address.",Support - Order,2025-06-07 06:55:17.308059
+54,do you sell catheters for women?,"Yes, we offer a full range of catheters designed for women, including LoFric Sense, which is compact and easy to use.",General,2025-06-07 06:55:41.950619
+55,help,"Sure — I can assist with orders, funding, or product information. What do you need help with?",General,2025-06-07 06:55:55.301681
+56,nothing,Or something,General,2025-06-07 06:56:07.212392
+57,???,"If you're unsure what to ask, try: 'How do I order with NDIS?' or 'Is Navina covered by CAPS?'",General,2025-06-07 06:56:27.350326
+58,do you work?,Yes! I’m here 24/7 to help with Mediplast-related questions.,General,2025-06-07 06:56:36.570392
+59,do you work,Yes! I’m here 24/7 to help with Mediplast-related questions.,General,2025-06-07 06:56:46.487887
+60,i need help with my order or sample,I don’t know what catheter I need. Can you help?,General - Sample,2025-06-07 06:56:55.259093
+61,can i claim lofric origo with ndis?,"Yes, LoFric Origo is eligible under NDIS funding. Select 'NDIS Customer' during checkout.",Funding - NDIS,2025-06-07 06:57:44.934240
+62,what is navina mini?,Navina Mini is a bowel management product designed for self-use. It is easy to operate and suitable for most users with neurogenic bowel issues.,Product - Navina,2025-06-07 06:57:59.088144
+63,i need help with my order or sample,"Of course. Could you tell me your order number or describe the issue? I can help check delivery status, track missing items, or clarify order details.Can I claim LoFric Origo with NDIS?",General - Sample,2025-06-07 06:58:57.901596
+64,hey,"Hey! I’m here to help with products, orders, or funding support.",General,2025-06-07 07:06:51.393124
+65,what is sku 42512003,"SKU 4441400 refers to LoFric Origo 40cm CH14 Tiemann. It is an instantly activated, male intermittent catheter ideal for discreet use and travel.",General,2025-06-07 07:21:34.009947
+66,hey,"Hey! I’m here to help with products, orders, or funding support.",General,2025-06-07 07:41:30.448653
+67,can i claim lofric origo with ndis?,"Yes, LoFric Origo is eligible under NDIS funding. Select 'NDIS Customer' during checkout.",Funding - NDIS,2025-06-07 07:43:57.581390
+68,hey,"Hey! I’m here to help with products, orders, or funding support.",General,2025-06-07 07:47:00.135954
+69,can i claim lofric origo with ndis?,"Yes, LoFric Origo is eligible under NDIS funding. Select 'NDIS Customer' during checkout.",Funding - NDIS,2025-06-07 07:47:07.972727
+70,how do i contact mediplast?,"You can contact us via the Contact Us page on the webshop, or call our Customer Care hotline listed in the footer.",General,2025-06-07 07:47:15.164903
+71,what is 5 + 5,"SKU 4441400 refers to LoFric Origo 40cm CH14 Tiemann. It is an instantly activated, male intermittent catheter ideal for discreet use and travel.",General,2025-06-07 07:47:36.642378
+72,hi,How are you doing?,General,2025-06-07 09:41:22.131031
+73,what is navina mini?,Navina Mini is a bowel management product designed for self-use. It is easy to operate and suitable for most users with neurogenic bowel issues.,Product - Navina,2025-06-07 09:41:37.525530
+74,hi,How are you doing?,General,2025-06-07 09:55:04.048894
+75,what is navina mini?,Navina Mini is a bowel management system designed for home use. It’s intuitive and ideal for new users.,Product - Navina,2025-06-07 09:55:08.375519
+76,2,who wrote vineland,General,2025-06-07 09:55:25.817224
+77,what is lofric,"LoFric Sense is a self-lubricating intermittent catheter designed specifically for women, offering comfort and ease of use. Examples include SKUs 4161000 and 4161400.",Product - LoFric,2025-06-07 09:55:33.598046
+78,can i claim lofric origo with ndis?,"Yes, please contact our Customer Service Team via the Contact Us page, and we will generate a quote for your plan manager.",Funding - NDIS,2025-06-07 10:01:50.265660
+79,do you recommend lofric elle or sense for women?,Both are great options. LoFric Sense is slim and discreet. Elle has an ergonomic handle for easier use. NDIS covers both.,Product - LoFric,2025-06-07 10:45:16.483312
+80,i don’t know what catheter i need. can you help?,"Yes, I can assist based on your needs. Let’s start with a few questions: are you male or female, and do you need a straight or curved (Tiemann) tip?",General,2025-06-14 00:22:25.761767
+81,i’m female. not sure about the tip.,"Thanks! Most women use shorter catheters with a straight tip, unless your clinician has recommended otherwise. Are you looking for something discreet and easy to carry, or more robust for daily use?",General,2025-06-14 00:22:38.145486
+82,i want something discreet. i travel a lot.,What is Navina Mini?,General,2025-06-14 00:22:49.676458
+83,i want something discreet. i travel a lot,What is Navina Mini?,General,2025-06-14 00:23:54.637124
+84,i don’t know what catheter i need. can you help?,"Yes, I can assist based on your needs. Let’s start with a few questions: are you male or female, and do you need a straight or curved (Tiemann) tip?",General,2025-06-14 00:25:39.471848
+85,i’m female. not sure about the tip.,"Thanks! Most women use shorter catheters with a straight tip, unless your clinician has recommended otherwise. Are you looking for something discreet and easy to carry, or more robust for daily use?",General,2025-06-14 00:25:45.014885
+86,i want something discreet. i travel a lot.,What is Navina Mini?,General,2025-06-14 00:25:54.682774
+87,i want something discreet. i travel a lot.,What is Navina Mini?,General,2025-06-14 00:26:01.625407
+88,what's the difference between lofric elle and origo?,"LoFric Elle is a discreet, ergonomically designed catheter for women, while Origo is foldable and travel-friendly.",Product - LoFric,2025-06-14 00:26:23.184309
+89,what catheters can i claim under dva?,Products like LoFric Primo and LoFric Sense are claimable through DVA’s RAP program with a prescription.,Funding - DVA,2025-06-14 00:26:33.803271
+90,yes please.,What is SKU 4441400?,General,2025-06-14 00:28:21.885365
+91,i don’t know what catheter i need. can you help?,"Yes, I can assist based on your needs. Let’s start with a few questions: are you male or female, and do you need a straight or curved (Tiemann) tip?",General,2025-06-14 00:31:25.205352
+92,i’m female. not sure about the tip.,"Thanks! Most women use shorter catheters with a straight tip, unless your clinician has recommended otherwise. Are you looking for something discreet and easy to carry, or more robust for daily use?",General,2025-06-14 00:31:37.036723
+93,"i want something discreet, i travel a lot.",What is Navina Mini?,General,2025-06-14 00:31:52.460494
+94,can i claim lofric origo with ndis?,"Yes, please contact our Customer Service Team via the Contact Us page, and we will generate a quote for your plan manager.",Funding - NDIS,2025-06-14 00:32:31.490425
+95,is navina covered by caps?,CAPS typically does not cover Navina. You may need to use NDIS or private pay options.,Funding - CAPS,2025-06-14 00:32:34.838448
+96,what is navina mini?,Navina Mini is a bowel management system designed for home use. It’s intuitive and ideal for new users.,Product - Navina,2025-06-14 00:32:39.670251
+97,i need help with my order or sample,"Of course. Could you tell me your order number or describe the issue? I can help check delivery status, track missing items, or clarify order details.Can I claim LoFric Origo with NDIS?",General - Sample,2025-06-14 00:32:48.735911
+98,can i claim lofric origo with ndis?,"Yes, please contact our Customer Service Team via the Contact Us page, and we will generate a quote for your plan manager.",Funding - NDIS,2025-06-14 00:33:00.001178
+99,i need help with my order or sample,"Of course. Could you tell me your order number or describe the issue? I can help check delivery status, track missing items, or clarify order details.Can I claim LoFric Origo with NDIS?",General - Sample,2025-06-14 00:33:03.533603
+100,"something discreet, i travel a lot.","Great! I’d recommend the LoFric Elle. It’s a compact, pre-lubricated catheter with a discreet applicator handle. It’s also NDIS-eligible and comes in sizes tailored for women. Would you like to see product info or order samples?",General,2025-06-14 00:33:50.610149
+101,"yes, show me more info.","After checkout, you should receive a tracking email. If not received within 24 hours, please contact our Customer Care Team.",General,2025-06-14 00:34:01.792047
+102,show me more info.,"Here’s a link to the LoFric Elle product page. Quick facts: Length: ~10cm, Tip: Straight, Ready-to-use with sterile water, Designed for one-handed use, Can be disposed of discreetly, Would you like help checking if this is covered by your NDIS plan?",General,2025-06-14 00:34:29.099409
+103,yes.,Do you feel?,General,2025-06-14 00:34:52.041303
+104,yes,Do you feel?,General,2025-06-14 00:35:06.679743
+105,yes please,What is SKU 4441400?,General,2025-06-14 00:35:24.606865
+106,"yes please, show me if this is covered under ndis.","Perfect. The LoFric Elle is approved for NDIS. At checkout, just choose ‘NDIS Customer’, upload your plan, and our team will process it for you.",Funding - NDIS,2025-06-14 00:36:05.089340
+107,is navina covered by caps?,CAPS typically does not cover Navina. You may need to use NDIS or private pay options.,Funding - CAPS,2025-06-14 00:36:15.854969
+108,what is navina mini?,Navina Mini is a bowel management system designed for home use. It’s intuitive and ideal for new users.,Product - Navina,2025-06-14 00:36:19.385768
+109,i need help with my order or sample,"Of course. Could you tell me your order number or describe the issue? I can help check delivery status, track missing items, or clarify order details.Can I claim LoFric Origo with NDIS?",General - Sample,2025-06-14 00:36:22.940693
+110,what's the difference between lofric elle and origo?,"LoFric Elle is a discreet, ergonomically designed catheter for women, while Origo is foldable and travel-friendly.",Product - LoFric,2025-06-14 00:36:36.509594
+111,i don’t know what catheter i need. can you help?,"Yes, I can assist based on your needs. Let’s start with a few questions: are you male or female, and do you need a straight or curved (Tiemann) tip?",General,2025-06-14 00:37:34.223065
+112,i’m female. not sure about the tip.,"Thanks! Most women use shorter catheters with a straight tip, unless your clinician has recommended otherwise. Are you looking for something discreet and easy to carry, or more robust for daily use?",General,2025-06-14 00:37:41.152628
+113,"something discreet, i travel a lot.","Great! I’d recommend the LoFric Elle. It’s a compact, pre-lubricated catheter with a discreet applicator handle. It’s also NDIS-eligible and comes in sizes tailored for women. Would you like to see product info or order samples?",General,2025-06-14 00:37:49.224529
+114,show me more info.,"Here’s a link to the LoFric Elle product page. Quick facts: Length: ~10cm, Tip: Straight, Ready-to-use with sterile water, Designed for one-handed use, Can be disposed of discreetly, Would you like help checking if this is covered by your NDIS plan?",General,2025-06-14 00:37:55.226966
+115,"yes please, show me if this is covered under ndis.","Perfect. The LoFric Elle is approved for NDIS. At checkout, just choose ‘NDIS Customer’, upload your plan, and our team will process it for you.",Funding - NDIS,2025-06-14 00:38:06.373779
+116,what is the difference between lofric origo and lofric primo?,"LoFric Origo is a discreet, foldable catheter ideal for portability, while LoFric Primo is ready-to-use with a sterile water package inside.",Product - LoFric,2025-06-14 00:38:28.780072
+117,which catheter should i choose for travel?,"LoFric Origo is an excellent choice for travel due to its foldable, discreet design.",General,2025-06-14 00:38:50.958589
+118,what is sku 42512003?,SKU 42512003 is the LoFric Hydro-Kit 40cm CH12 Tiemann – a self-lubricating catheter with a sterile water pocket and 1000ml urine collection bag.What is the Navina system used for?,General,2025-06-14 00:39:11.484531
+119,can i claim lofric origo with ndis?,"Yes, please contact our Customer Service Team via the Contact Us page, and we will generate a quote for your plan manager.",Funding - NDIS,2025-06-14 00:39:28.351878
+120,i need help with my order or sample,"Of course. Could you tell me your order number or describe the issue? I can help check delivery status, track missing items, or clarify order details.Can I claim LoFric Origo with NDIS?",General - Sample,2025-06-14 00:39:34.787765
+121,what is navina mini?,Navina Mini is a bowel management system designed for home use. It’s intuitive and ideal for new users.,Product - Navina,2025-06-14 00:39:39.038264
+122,i don’t know what catheter i need. can you help?,"Yes, I can assist based on your needs. Let’s start with a few questions: are you male or female, and do you need a straight or curved (Tiemann) tip?",General,2025-06-14 00:41:08.692111
+123,i’m female. not sure about the tip.,"Thanks! Most women use shorter catheters with a straight tip, unless your clinician has recommended otherwise. Are you looking for something discreet and easy to carry, or more robust for daily use?",General,2025-06-14 00:41:16.563037
+124,"something discreet, i travel a lot.","Great! I’d recommend the LoFric Elle. It’s a compact, pre-lubricated catheter with a discreet applicator handle. It’s also NDIS-eligible and comes in sizes tailored for women. Would you like to see product info or order samples?",General,2025-06-14 00:41:28.548554
+125,show me more info.,"Here’s a link to the LoFric Elle product page. Quick facts: Length: ~10cm, Tip: Straight, Ready-to-use with sterile water, Designed for one-handed use, Can be disposed of discreetly, Would you like help checking if this is covered by your NDIS plan?",General,2025-06-14 00:41:36.772569
+126,"yes please, show me if this is covered under ndis.","Perfect. The LoFric Elle is approved for NDIS. At checkout, just choose ‘NDIS Customer’, upload your plan, and our team will process it for you.",Funding - NDIS,2025-06-14 00:41:47.481449
+127,what is the difference between lofric origo and lofric primo?,"LoFric Origo is a discreet, foldable catheter ideal for portability, while LoFric Primo is ready-to-use with a sterile water package inside.",Product - LoFric,2025-06-14 00:42:00.340272
+128,which catheter should i choose for travel?,"LoFric Origo is an excellent choice for travel due to its foldable, discreet design.",General,2025-06-14 00:42:10.317063
+129,what is sku 42512003?,SKU 42512003 is the LoFric Hydro-Kit 40cm CH12 Tiemann – a self-lubricating catheter with a sterile water pocket and 1000ml urine collection bag.What is the Navina system used for?,General,2025-06-14 00:42:18.648582
+130,can i claim lofric origo with ndis?,"Yes, please contact our Customer Service Team via the Contact Us page, and we will generate a quote for your plan manager.",Funding - NDIS,2025-06-14 00:42:28.216466
+131,i need help with my order or sample,"Of course. Could you tell me your order number or describe the issue? I can help check delivery status, track missing items, or clarify order details.Can I claim LoFric Origo with NDIS?",General - Sample,2025-06-14 00:42:39.406050
+132,what is navina mini?,Navina Mini is a bowel management system designed for home use. It’s intuitive and ideal for new users.,Product - Navina,2025-06-14 00:42:45.527748
+133,is navina covered by caps?,CAPS typically does not cover Navina. You may need to use NDIS or private pay options.,Funding - CAPS,2025-06-14 00:42:51.200710
+134,which catheter is suitable for paediatric use?,LoFric Classic and LoFric Hydro-Kit both have paediatric variants like SKU 4010600 and 42110003 respectively.,General,2025-06-14 01:06:23.862413
+135,how do i change my shipping address?,"If your order hasn’t been dispatched yet, please contact Customer Service immediately to update your shipping address.",Support - Order,2025-06-14 01:06:55.506639
+136,do you sell catheters for women?,"Yes, we offer a full range of catheters designed for women, including LoFric Sense and Elle.",General,2025-06-14 01:07:11.279972
+137,tell me about lofric classic.,LoFric Classic is a self-lubricating catheter used for intermittent catheterisation. It comes in a variety of lengths and diameters including paediatric sizes.,Product - LoFric,2025-06-14 01:07:43.590273
+138,what’s up?,"A supercomputer is a computer which operates at several orders of magnitude greater speed and capacity than everyday general purpose computers, like the one you are talking to me on.",General,2025-06-14 01:08:53.912285
+139,what’s up?,What is SKU 4031400?,General,2025-06-14 01:09:08.203850
+140,is navina covered by caps?,CAPS typically does not cover Navina. You may need to use NDIS or private pay options.,Funding - CAPS,2025-06-14 01:09:17.414712
+141,what is sku 4441400?,"SKU 4441400 refers to LoFric Origo 40cm CH14 Tiemann. It is an instantly activated, male intermittent catheter ideal for discreet use and travel.",General,2025-06-14 01:09:44.747729
+142,do you sell catheters for women?,"Yes, we offer a full range of catheters designed for women, including LoFric Sense and Elle.",General,2025-06-14 01:11:01.195181
+143,tell me about lofric classic.,LoFric Classic is a self-lubricating catheter used for intermittent catheterisation. It comes in a variety of lengths and diameters including paediatric sizes.,Product - LoFric,2025-06-14 01:11:07.889317
+144,which catheter is suitable for paediatric use?,LoFric Classic and LoFric Hydro-Kit both have paediatric variants like SKU 4010600 and 42110003 respectively.,General,2025-06-14 01:11:14.076386
+145,is navina covered by caps?,CAPS typically does not cover Navina. You may need to use NDIS or private pay options.,Funding - CAPS,2025-06-14 01:11:20.873779
+146,what is sku 4441400?,"SKU 4441400 refers to LoFric Origo 40cm CH14 Tiemann. It is an instantly activated, male intermittent catheter ideal for discreet use and travel.",General,2025-06-14 01:11:35.852557
+147,what is sku 42512003?,SKU 42512003 is the LoFric Hydro-Kit 40cm CH12 Tiemann – a self-lubricating catheter with a sterile water pocket and 1000ml urine collection bag.What is the Navina system used for?,General,2025-06-14 01:11:41.617348
+148,i need help with my order or sample,"Of course. Could you tell me your order number or describe the issue? I can help check delivery status, track missing items, or clarify order details.Can I claim LoFric Origo with NDIS?",General - Sample,2025-06-14 01:12:01.647197
+149,do you sell catheters for women?,"Yes, we offer a full range of catheters designed for women, including LoFric Sense and Elle.",General,2025-06-14 01:23:59.239774
+150,tell me about lofric classic.,LoFric Classic is a self-lubricating catheter used for intermittent catheterisation. It comes in a variety of lengths and diameters including paediatric sizes.,Product - LoFric,2025-06-14 01:24:05.224364
+151,which catheter is suitable for paediatric use?,LoFric Classic and LoFric Hydro-Kit both have paediatric variants like SKU 4010600 and 42110003 respectively.,General,2025-06-14 01:24:11.335332
+152,is navina covered by caps?,CAPS typically does not cover Navina. You may need to use NDIS or private pay options.,Funding - CAPS,2025-06-14 01:24:17.311195
+153,what is sku 4441400?,"SKU 4441400 refers to LoFric Origo 40cm CH14 Tiemann. It is an instantly activated, male intermittent catheter ideal for discreet use and travel.",General,2025-06-14 01:24:28.456514
+154,what is sku 42512003?,SKU 42512003 is the LoFric Hydro-Kit 40cm CH12 Tiemann – a self-lubricating catheter with a sterile water pocket and 1000ml urine collection bag.What is the Navina system used for?,General,2025-06-14 01:24:33.970829

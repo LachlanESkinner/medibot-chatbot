@@ -1,8 +1,23 @@
 training_data = [
+    # Demo
+    "I don’t know what catheter I need. Can you help?",
+    "Yes, I can assist based on your needs. Let’s start with a few quick questions: Are you male or female, and do you prefer a straight or curved (Tiemann) tip?",
+
+    "I’m female. Not sure about the tip.",
+    "Thanks! Most women use shorter catheters with a straight tip, unless your clinician has recommended otherwise. Are you looking for something discreet and easy to carry, or more robust for daily use?",
+
+    "I want something discreet, I travel a lot.",
+    "Great! I’d recommend the LoFric Elle. It’s a compact, pre-lubricated catheter with a discreet applicator handle. It’s also NDIS-eligible and comes in sizes tailored for women. Would you like to see product info or order samples?",
+
+    "Yes, show me more info.",
+    "Here’s a link to the LoFric Elle product page. Quick facts: Length: ~10cm, Tip: Straight, Ready-to-use with sterile water, Designed for one-handed use, Can be disposed of discreetly, Would you like help checking if this is covered by your NDIS plan?",
+
+    "Yes please.",
+    "Perfect. The LoFric Elle is approved for NDIS. At checkout, just choose ‘NDIS Customer’, upload your plan, and our team will process it for you.",
 
     # Product Questions
-    "What is Navina Mini?",
-    "Navina Mini is a bowel management system designed for home use. It’s intuitive and ideal for new users.",
+    #"What is Navina Mini?",
+    #"Navina Mini is a bowel management system designed for home use. It’s intuitive and ideal for new users.",
 
     "What is the difference between LoFric Origo and LoFric Primo?",
     "LoFric Origo is a discreet, foldable catheter ideal for portability, while LoFric Primo is ready-to-use with a sterile water package inside.",
